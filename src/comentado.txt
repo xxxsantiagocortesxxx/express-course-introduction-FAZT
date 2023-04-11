@@ -1,0 +1,103 @@
+
+// app.get('/', (req, res)=>{
+//     // .end     -> pero no da tanta informacion
+//     res.send('helo world')
+// })
+
+
+//------------formas de responder----------------------
+
+// app.get("/miarchivo", (req, res) => {
+//   res.sendFile("./japan.jpg", {
+//     root: __dirname,
+//   });
+// });
+
+// app.get("/user", (req, res) => {
+//   res.json({
+//     name: "david",
+//     lasname: "cortes",
+//     age: 20,
+//     points: [1, 2, 3],
+//     address: {
+//       city: "new york",
+//       street: "brooklyn 27",
+//     },
+//   });
+// });
+
+// app.get("/isAlive", (req, res) => {
+//    // res.sendStatus(204);
+//    res.status(200).end("todo correcto")
+// });
+
+
+//-------------hora 1:00:00-----------------------
+
+// app.use(express.text())
+// app.use(express.json())
+
+// //para los formularios
+// app.use(express.urlencoded({extended: false}))
+
+// app.post("/user", (req, res) =>{
+
+//     console.log(req.body)
+//     res.send('nuevo usuario creado')
+// })
+
+//--------------------------------------
+
+
+// app.get('/search', (req, res)=>{
+
+//     console.log(req.query)
+//     if(req.query.q === 'javascript books'){
+//         res.send('lista de libros de javascript')
+//     }else{
+//         res.send('pagina normal')
+//     }
+
+// })
+
+// app.get('/hello/:userN' ,(req, res) =>{
+
+//     // console.log(req.params.userN)
+//     // console.log(req.query) 
+
+//     const {user, password} = req.query 
+    
+//     console.log(user)
+//     console.log(password)
+
+//     res.send(`Bienvenido ${req.params.userN.toLocaleUpperCase()}`)
+// })
+
+
+// app.get('/add/:x/:y', (req,res)=>{
+
+//     //desetructuacion
+//     const {x: ss,y} = req.params
+
+//     const result = parseInt(ss) + parseInt(y)
+//     res.send(`result: ${result}`)
+// })
+
+
+// app.get('/user/:username/photo', (req, res)=>{
+//     if(req.params.username === 'santi')
+//     {
+//        return res.sendFile('./japan.jpg',{
+//             root: __dirname
+//         })
+//     }
+
+//     res.send("el usuario no tiene acceso")   
+// })
+
+// app.get('/nombre/:nombre/age/:age', (req, res)=>{
+
+//     res.send(`el usuario ${req.params.nombre} tiene ${req.params.age} años.` )
+// })
+
+//---------------------------------------
